@@ -2,38 +2,46 @@ module.exports = function (config) {
     'use strict';
 
     config.set({
-        frameworks: ['qunit'],
+        frameworks: ['mocha'],
 
         files: [
+            // Assertion Libraries
+            'lib/chai/chai.js',
+            'lib/sinon/sinon.js',
+            'lib/sinon/sinon.chai.js',
+
             // Libraries
-            { pattern: 'lib/jquery/jquery.js' },
-            { pattern: 'lib/underscore/underscore.js' },
-            { pattern: 'lib/backbone/backbone.js' },
+            'lib/jquery/jquery.js',
+            'lib/underscore/underscore.js',
+            'lib/backbone/backbone.js',
 
             // Sources
-            { pattern: 'src/backbone/composite.js' },
+            'src/backbone/composite.js',
 
             // Fixtures
-            { pattern: 'test/index.html', included: false },
-            { pattern: 'test/fixture_loader.js' },
+            'test/index.html',
+            'test/fixture_loader.js',
 
             // Tests
-            { pattern: 'test/backbone/composite_test.js' }
+            'test/backbone/composite.test.js'
         ],
 
         preprocessors: {
-            'src/**/*.js': ['coverage']
+            'src/**/*.js': ['coverage'],
+            'test/**/*.html': ['html2js']
         },
 
         reporters: ['progress', 'coverage'],
 
-        reportSlowerThan: 50,
-
         coverageReporter: {
             type: 'html',
-            dir: 'coverage_reports'
+            dir: 'coverage'
         },
 
-        browsers: ['Firefox']
+        reportSlowerThan: 75,
+
+        browsers: ['Firefox'],
+
+        autoWatch: true
     });
 };

@@ -23,8 +23,7 @@ module.exports = function (grunt) {
                 jshintrc: '.jshintrc'
             },
 
-            src: 'src/**/*.js',
-            test: 'test/**/*.js'
+            src: 'src/**/*.js'
         },
 
         concat: {
@@ -55,6 +54,8 @@ module.exports = function (grunt) {
         karma: {
             test: {
                 configFile: 'karma.conf.js',
+
+                autoWatch: false,
                 singleRun: true
             }
         }

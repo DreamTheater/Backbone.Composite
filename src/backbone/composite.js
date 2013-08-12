@@ -1,5 +1,11 @@
-(function (self) {
+(function () {
     'use strict';
+
+    ////////////////////
+
+    var scope;
+
+    ////////////////////
 
     var Composite = Backbone.Composite = function (view) {
 
@@ -11,7 +17,7 @@
 
         ////////////////////
 
-        self = _.extend(this, {
+        scope = _.extend(this, {
             view: view
         }, {
             components: {}
@@ -23,13 +29,13 @@
             render: _.wrap(view.render, function (fn) {
                 fn.call(this);
 
-                self.renderComponents();
+                scope.renderComponents();
 
                 return this;
             }),
 
             remove: _.wrap(view.remove, function (fn) {
-                self.removeComponents();
+                scope.removeComponents();
 
                 fn.call(this);
 
@@ -59,11 +65,13 @@
 
                 ////////////////////
 
-                var view = options.view;
+                var view = options.view, selector = options.selector;
 
                 ////////////////////
 
-                this.components[component] = options;
+                this.components[component] = _.extend(view, {
+                    selector: selector || null
+                });
 
                 this.view.listenTo(view, 'all', function (event) {
 
@@ -93,18 +101,11 @@
         renderComponents: function () {
             var components = this.components;
 
-            _.each(components, function (options) {
-
-                ////////////////////
-
-                var view = options.view,
-
-                    $el = this._resolveElement.call({
-                        view: this.view,
-                        options: options
-                    });
-
-                ////////////////////
+            _.each(components, function (view) {
+                var $el = this._resolveElement.call({
+                    view: this.view,
+                    selector: view.selector
+                });
 
                 view.setElement($el).render();
             }, this);
@@ -115,14 +116,7 @@
         removeComponents: function () {
             var components = this.components;
 
-            _.each(components, function (options) {
-
-                ////////////////////
-
-                var view = options.view;
-
-                ////////////////////
-
+            _.each(components, function (view) {
                 view.remove();
             });
 
@@ -130,14 +124,7 @@
         },
 
         _resolveElement: function () {
-
-            ////////////////////
-
-            var selector = this.options.selector;
-
-            ////////////////////
-
-            var view = this.view;
+            var view = this.view, selector = this.selector;
 
             if (_.isFunction(selector)) {
                 selector = selector.call(view);
