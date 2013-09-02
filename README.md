@@ -4,9 +4,6 @@
 [travis-badge]: https://secure.travis-ci.org/DreamTheater/Backbone.Composite.png
 [travis-link]: https://travis-ci.org/DreamTheater/Backbone.Composite
 
-[coveralls-badge]: https://coveralls.io/repos/DreamTheater/Backbone.Composite/badge.png
-[coveralls-link]: https://coveralls.io/r/DreamTheater/Backbone.Composite
-
 [gemnasium-badge]: https://gemnasium.com/DreamTheater/Backbone.Composite.png
 [gemnasium-link]: https://gemnasium.com/DreamTheater/Backbone.Composite#tab-dev_dependencies
 
@@ -14,7 +11,6 @@
 
 [![NPM Version][npm-badge]][npm-link]
 [![Build Status][travis-badge]][travis-link]
-[![Coverage Status][coveralls-badge]][coveralls-link]
 [![Dependency Status][gemnasium-badge]][gemnasium-link]
 
 The plugin helps you create compositions from nested views.
