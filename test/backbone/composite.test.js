@@ -49,7 +49,7 @@
         });
 
         describe('#add(component, options)', function () {
-            it('should add components (a nested views) to the composite', function () {
+            it('should add components to the composite', function () {
 
                 ////////////////////
 
@@ -74,14 +74,14 @@
                 expect(composite.components.secondComponent).to.be.an.instanceOf(SecondComponent);
             });
 
-            it('should invoke `render()` of a nested views', function () {
+            it('should invoke `render()` of each component', function () {
                 expect(composite.components.firstComponent.render).to.have.been.calledOnce;
                 expect(composite.components.secondComponent.render).to.have.been.calledOnce;
             });
         });
 
         describe('#view', function () {
-            it('should propagate events of a nested views', function () {
+            it('should propagate events of all components', function () {
 
                 ////////////////////
 
@@ -100,7 +100,7 @@
         });
 
         describe('#view.render()', function () {
-            it('should invoke `render()` of a nested views', function () {
+            it('should invoke `render()` of each component', function () {
                 composite.view.render();
 
                 expect(composite.components.firstComponent.render).to.have.been.calledTwice;
@@ -109,7 +109,7 @@
         });
 
         describe('#view.remove()', function () {
-            it('should invoke `remove()` of a nested views', function () {
+            it('should invoke `remove()` of each component', function () {
                 composite.view.remove();
 
                 expect(composite.components.firstComponent.remove).to.have.been.called;
