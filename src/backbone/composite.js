@@ -29,7 +29,7 @@
             render: _.wrap(view.render, function (fn) {
                 fn.call(this);
 
-                scope.renderComponents();
+                scope.refresh();
 
                 return this;
             }),
@@ -93,7 +93,7 @@
         },
 
         refresh: function () {
-            this.view.render();
+            this.renderComponents();
 
             return this;
         },

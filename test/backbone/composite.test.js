@@ -9,6 +9,24 @@
 
         ////////////////////
 
+//        before(function () {
+//
+//        });
+
+//        beforeEach(function () {
+//
+//        });
+
+//        afterEach(function () {
+//
+//        });
+
+//        after(function () {
+//
+//        });
+
+        ////////////////////
+
         describe('#constructor(view)', function () {
             it('should initialize the composite', function () {
 
