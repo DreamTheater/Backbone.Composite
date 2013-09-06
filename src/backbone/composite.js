@@ -3,7 +3,7 @@
 
     ////////////////////
 
-    var scope;
+    var composite;
 
     ////////////////////
 
@@ -17,7 +17,7 @@
 
         ////////////////////
 
-        scope = _.extend(this, {
+        composite = _.extend(this, {
             view: view
         }, {
             components: {}
@@ -29,13 +29,13 @@
             render: _.wrap(view.render, function (fn) {
                 fn.call(this);
 
-                scope.refresh();
+                composite.refresh();
 
                 return this;
             }),
 
             remove: _.wrap(view.remove, function (fn) {
-                scope.removeComponents();
+                composite.removeComponents();
 
                 fn.call(this);
 
