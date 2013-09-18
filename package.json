@@ -38,7 +38,7 @@
     },
 
     "scripts": {
-        "test": "./node_modules/.bin/grunt jshint karma"
+        "test": "./node_modules/.bin/grunt jshint karma && ./node_modules/.bin/mocha test/**/*.test.js"
     },
 
     "dependencies": {
