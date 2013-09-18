@@ -20,7 +20,7 @@ module.exports = function (config) {
 
             // Fixtures
             'test/index.html',
-            'test/fixture_loader.js',
+            'test/window.js',
 
             // Tests
             'test/backbone/composite.test.js'

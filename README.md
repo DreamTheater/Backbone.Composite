@@ -5,7 +5,7 @@
 [travis-link]: https://travis-ci.org/DreamTheater/Backbone.Composite
 
 [gemnasium-badge]: https://gemnasium.com/DreamTheater/Backbone.Composite.png
-[gemnasium-link]: https://gemnasium.com/DreamTheater/Backbone.Composite#tab-dev_dependencies
+[gemnasium-link]: https://gemnasium.com/DreamTheater/Backbone.Composite
 
 # Backbone.Composite
 
@@ -18,10 +18,13 @@ The plugin helps you create compositions from nested views.
 **Dependencies:**
 
   - [Backbone](https://github.com/documentcloud/backbone) `>= 1.0.0`
-  - [Underscore](https://github.com/documentcloud/underscore) `>= 1.5.1`
+  - [Underscore](https://github.com/documentcloud/underscore) `>= 1.5.2`
 
 ## Getting Started
 
 ## Changelog
+### 0.1.1
+  - Added CommonJS support
+
 ### 0.1.0
   - Initial release

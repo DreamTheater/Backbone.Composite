@@ -1,12 +1,25 @@
 /**
- * Backbone.Composite v0.1.0
+ * Backbone.Composite v0.1.1
  * https://github.com/DreamTheater/Backbone.Composite
  *
  * Copyright (c) 2013 Dmytro Nemoga
  * Released under the MIT license
  */
-(function () {
+(function (factory) {
     'use strict';
+
+    if (typeof exports !== 'undefined') {
+        module.exports = factory({
+            _: require('underscore'),
+            Backbone: require('backbone')
+        });
+    } else {
+        factory(window);
+    }
+}(function (environment) {
+    'use strict';
+
+    var _ = environment._, Backbone = environment.Backbone;
 
     ////////////////////
 
@@ -140,4 +153,6 @@
             return selector ? view.$(selector) : view.$el;
         }
     });
-}());
+
+    return Composite;
+}));

@@ -1,7 +1,33 @@
-(function (expect) {
+(function (factory) {
     'use strict';
 
-    describe('Backbone.Composite', function () {
+    if (typeof exports !== 'undefined') {
+
+        ////////////////////
+
+        var environment = require('../environment.js');
+
+        ////////////////////
+
+        module.exports = factory(environment);
+    } else {
+        factory(window);
+    }
+}(function (environment) {
+    'use strict';
+
+    var _ = environment._, Backbone = environment.Backbone,
+
+        chai = environment.chai,
+        sinon = environment.sinon;
+
+    ////////////////////
+
+    var expect = chai.expect;
+
+    ////////////////////
+
+    return describe('Backbone.Composite', function () {
 
         ////////////////////
 
@@ -9,21 +35,21 @@
 
         ////////////////////
 
-//        before(function () {
-//
-//        });
+        //        before(function () {
+        //
+        //        });
 
-//        beforeEach(function () {
-//
-//        });
+        //        beforeEach(function () {
+        //
+        //        });
 
-//        afterEach(function () {
-//
-//        });
+        //        afterEach(function () {
+        //
+        //        });
 
-//        after(function () {
-//
-//        });
+        //        after(function () {
+        //
+        //        });
 
         ////////////////////
 
@@ -117,4 +143,4 @@
             });
         });
     });
-}(chai.expect));
+}));
