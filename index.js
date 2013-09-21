@@ -1,3 +1,1 @@
-module.exports = {
-    Composite: require('./src/backbone/composite.js')
-};
+module.exports = require('./dist/backbone.composite.js');
