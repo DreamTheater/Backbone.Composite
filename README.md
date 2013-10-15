@@ -17,7 +17,7 @@ The plugin helps you create compositions from nested views.
 
 **Dependencies:**
 
-  - [Backbone](https://github.com/documentcloud/backbone) `>= 1.0.0`
+  - [Backbone](https://github.com/documentcloud/backbone) `>= 1.1.0`
   - [Underscore](https://github.com/documentcloud/underscore) `>= 1.5.2`
 
 ## Getting Started
