@@ -62,9 +62,13 @@
         });
     };
 
-    _.extend(Composite.prototype, {
-        constructor: Composite,
+    _.extend(Composite, {
+        extend: Backbone.View.extend
+    });
 
+    _.extend(Composite.prototype, {
+        constructor: Composite
+    }, {
         add: function (component, options) {
 
             ////////////////////

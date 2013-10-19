@@ -23,6 +23,9 @@ The plugin helps you create compositions from nested views.
 ## Getting Started
 
 ## Changelog
+### 0.1.2
+  - `Backbone.Composite` could be extended
+
 ### 0.1.1
   - Added CommonJS support
 

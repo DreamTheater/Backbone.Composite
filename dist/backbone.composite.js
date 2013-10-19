@@ -1,5 +1,5 @@
 /**
- * Backbone.Composite v0.1.1
+ * Backbone.Composite v0.1.2
  * https://github.com/DreamTheater/Backbone.Composite
  *
  * Copyright (c) 2013 Dmytro Nemoga
@@ -69,9 +69,13 @@
         });
     };
 
-    _.extend(Composite.prototype, {
-        constructor: Composite,
+    _.extend(Composite, {
+        extend: Backbone.View.extend
+    });
 
+    _.extend(Composite.prototype, {
+        constructor: Composite
+    }, {
         add: function (component, options) {
 
             ////////////////////
